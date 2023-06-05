@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service Shortener {
+    rpc Shorten (ShortenRequest) returns (ShortenResponse);
+}
+
+message ShortenRequest {
+    string name = 1;
+}
+
+  message ShortenReply {
+    string name = 1;
+}
