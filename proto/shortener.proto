@@ -1,13 +1,24 @@
 syntax = "proto3";
 
+option go_package = "../";
+
 service Shortener {
-    rpc Shorten (ShortenRequest) returns (ShortenResponse);
+    rpc ShortenUrl (ShortenUrlRequest) returns (ShortenUrlReply);
+    rpc GetFullUrl (GetFullUrlRequest) returns (GetFullUrlReply);
 }
 
-message ShortenRequest {
-    string name = 1;
+message ShortenUrlRequest {
+    string url = 1;
 }
 
-  message ShortenReply {
-    string name = 1;
+  message ShortenUrlReply {
+    string url = 1;
+}
+
+message GetFullUrlRequest {
+    string url = 1;
+}
+
+message GetFullUrlReply {
+    string url = 1;
 }
